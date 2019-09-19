@@ -17,7 +17,7 @@ int main(void)
 		{
 			putchar(unidad);
 			putchar(decimal);
-			if (decimal != 57 || unidad != 57)
+			if (decimal != 57 || unidad != 56)
 			{
 				putchar(',');
 				putchar(' ');
