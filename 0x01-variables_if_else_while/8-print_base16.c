@@ -3,7 +3,7 @@
 /**
  *main - print base 16 numbers with putchar
  *
- *Return : Alwayss 0 (Success)
+ *Return: Always 0 (Success)
  */
 int main(void)
 {
