@@ -17,9 +17,10 @@ int main(void)
 		while (b < 58)
 		{
 			c = (b < 57) ? a : a + 1;
+			d = (b < 57) ? b + 1 : 48;
 			while (c < 58)
 			{
-				d = (b < 57) ? b + 1 : 48;
+				d = 48;
 				while (d < 58)
 				{
 					putchar(a);
