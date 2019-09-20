@@ -20,7 +20,6 @@ int main(void)
 			d = (b < 57) ? b + 1 : 48;
 			while (c < 58)
 			{
-				d = 48;
 				while (d < 58)
 				{
 					putchar(a);
@@ -35,6 +34,7 @@ int main(void)
 					}
 					d++;
 				}
+				d = 48;
 				c++;
 			}
 			b++;
