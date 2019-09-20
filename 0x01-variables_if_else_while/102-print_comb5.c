@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 /**
  *main - print 2 combinations of numbers without repetitions
  *
