@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 /**
  *main - print 2 combinations of numbers without repetitions
  *
@@ -8,25 +7,18 @@
 int main(void)
 {
 	int a = 48;
-	int b;
+	int b = 0;
 	int c;
 	int d;
 
-	b = a;
 	while (a < 58)
 	{
 		while (b < 58)
 		{
-			if (b < 57)
-				c = a;
-			else
-				c = a + 1;
+			c = (b < 57) ? a : a + 1;
 			while (c < 58)
 			{
-				if (b < 57)
-					d = b + 1;
-				else
-					d = 48;
+				d = (b < 57) ? b + 1 : 48;
 				while (d < 58)
 				{
 					putchar(a);
@@ -40,7 +32,6 @@ int main(void)
 						putchar(' ');
 					}
 					d++;
-
 				}
 				c++;
 			}
