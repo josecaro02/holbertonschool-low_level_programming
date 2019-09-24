@@ -8,7 +8,10 @@
  */
 int main(void)
 {
-	long f1, f2, fibo, even;
+	long f1;
+	long f2;
+	long fibo;
+	long even;
 
 	f1 = 0;
 	f2 = 1;
