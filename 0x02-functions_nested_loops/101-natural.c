@@ -19,8 +19,9 @@ int main(void)
 				number = number + j;
 			}
 		}
+		if (i == 1023)
 			printf("%d\n", number);
-			number = 0;
+		number = 0;
 	}
-		return (0);
+	return (0);
 }

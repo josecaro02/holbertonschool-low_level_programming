@@ -26,8 +26,11 @@ void print_times_table(int n)
 				}
 				else if (mul < 10)
 				{
-					_putchar(' ');
-					_putchar(' ');
+					if(time != 0)
+					{
+						_putchar(' ');
+						_putchar(' ');
+					}
 					_putchar(mul + '0');
 				}
 				else
@@ -46,6 +49,5 @@ void print_times_table(int n)
 			time = 0;
 			table++;
 		}
-		_putchar('\n');
 	}
 }
