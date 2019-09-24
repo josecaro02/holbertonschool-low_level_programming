@@ -7,17 +7,19 @@
 void main(void)
 {
 	int i;
-	long  f1 = 0;
-	long  f2 = 1;
+	long  f1;
+	long  f2;
 	long fibo = 0;
 
-	for (i = 1; i <= 50; i++)
+	f1 = 0;
+	f2 = 1;
+	for (i = 0; i < 50; i++)
 	{
 		fibo = f2 + f1;
-		if (i != 50)
-			printf("%li, ", fibo);
+		if (i != 49)
+			printf("%ld, ", fibo);
 		else
-			printf("%li", fibo);
+			printf("%ld", fibo);
 		f1 = f2;
 		f2 = fibo;
 	}
