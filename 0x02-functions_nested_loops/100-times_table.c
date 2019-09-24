@@ -1,4 +1,5 @@
 #include "holberton.h"
+
 /**
  *print_times_table - print the times table of any number
  *@n: value given by user
@@ -7,7 +8,7 @@ void print_times_table(int n)
 {
 	int time = 0, table = 0, mul;
 
-	if (n > 0 && n < 15)
+	if (n > 0 && n <= 15)
 	{
 		while (table <= n)
 		{
