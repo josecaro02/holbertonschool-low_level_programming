@@ -3,8 +3,10 @@
 
 /**
  *main - print 50 first numbers of fibonacci
+ *
+ *Return: 0 no value
  */
-void main(void)
+int main(void)
 {
 	int i;
 	long  f1;
@@ -24,4 +26,5 @@ void main(void)
 		f2 = fibo;
 	}
 	printf("\n");
+	return (0);
 }
