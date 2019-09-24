@@ -6,13 +6,13 @@
  */
 void print_times_table(int n)
 {
-	int time = 0, table = 0, mul;
+	int time = 0, table, mul;
 
-	if (n > 0 && n <= 15)
+	if (n >= 0 && n < 15)
 	{
-		while (table <= n)
+		for (table = 0; table <= n; table++)
 		{
-			while (time <= n)
+			for (time = 0; time <= n; time++)
 			{
 				mul = table * time;
 				if (mul > 99)
@@ -31,7 +31,8 @@ void print_times_table(int n)
 					_putchar(mul + '0');
 				}
 				else
-				{	_putchar(' ');
+				{
+					_putchar(' ');
 					_putchar(mul / 10 + '0');
 					_putchar(mul % 10 + '0');
 				}
@@ -39,11 +40,9 @@ void print_times_table(int n)
 				{	_putchar(',');
 					_putchar(' ');
 				}
-				time++;
 			}
 			time = 0;
 			_putchar('\n');
-			table++;
 		}
 	}
 }
