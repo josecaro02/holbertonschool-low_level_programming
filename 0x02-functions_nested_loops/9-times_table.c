@@ -2,8 +2,6 @@
 
 /**
  *times_table - prints the 9 times table
- *
- *Return: no return is a void
  */
 void times_table(void)
 {
@@ -36,6 +34,5 @@ void times_table(void)
 		time = 0;
 		nine++;
 	}
-	_putchar('\n');
 
 }
