@@ -13,6 +13,11 @@ int main(void)
 	long fibo;
 	long even;
 
+
+	f1 = 0;
+	f2 = 1;
+	even = 0;
+	fibo = 0;
 	while (fibo <= 4000000)
 	{
 		fibo = f2 + f1;
