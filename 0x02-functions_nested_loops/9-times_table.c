@@ -16,6 +16,7 @@ void times_table(void)
 			mul = nine * time;
 			if (mul < 10)
 			{
+				if (time != 0)
 				_putchar(' ');
 				_putchar(mul + '0');
 			}
