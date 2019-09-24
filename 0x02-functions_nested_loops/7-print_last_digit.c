@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- *print_last_digit : module of a number to get last digit
+ *print_last_digit - module of a number to get last digit
  *@num: take the value given by user
  *
  *Return: ld with the last digit
