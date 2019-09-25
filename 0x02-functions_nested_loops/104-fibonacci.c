@@ -16,7 +16,7 @@ int main(void)
 
 	f1 = 0;
 	f2 = 1;
-	for (i=0; i < 99; i++)
+	for (i = 0; i < 98; i++)
 	{
 		if (i <= 91)
 		{
@@ -31,14 +31,14 @@ int main(void)
 			printf("%lu, ", fibo);
 			f1 = f2;
 			f2 = fibo;
-		 }
+		}
 		else
 		{
 			cat2 = head2 + head1;
 			cat1 = tail2 + tail1;
-			cat2 = cat2 + (cat1/1000);
+			cat2 = cat2 + (cat1 / 1000);
 			cat1 = cat1 % 1000;
-			printf(i==98 ? "%lu%03lu" : "%lu%03lu, ", cat2, cat1);
+			printf(i == 97 ? "%lu%03lu" : "%lu%03lu, ", cat2, cat1);
 			head1 = head2;
 			head2 = cat2;
 			tail1 = tail2;
