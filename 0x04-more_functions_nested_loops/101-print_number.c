@@ -8,15 +8,12 @@
  */
 void print_number(int n)
 {
-	unsigned int digito, res_digito;
-	unsigned int i;
+	unsigned int digito, res_digito, i, nro;
 
-	if (n < 0)
-	{
-		n = n * (-1);
-		_putchar('-');
-	}
-	res_digito = n;
+	n < 0 ? _putchar('-') : 1;
+	n = (n < 0) ? n * -1 : n * 1;
+	nro = n;
+	res_digito = nro;
 	digito = 1;
 	do {
 		digito = digito * 10;
