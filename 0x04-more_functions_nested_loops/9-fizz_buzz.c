@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- *fizzbuzz -  prints numbers from  1 to 100, if the number is multiple of 3
+ *main -  prints numbers from  1 to 100, if the number is multiple of 3
  *prints Fizz, if the number is multiple of 5 prints Buss, otherwhise prints
  *the number
  *
