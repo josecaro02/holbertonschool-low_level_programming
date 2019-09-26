@@ -13,13 +13,13 @@ int main(void)
 	i = 2;
 	number = 612852475143;
 	res = number;
-	while(res != 1)
+	while (res != 1)
 	{
 		if ((res % i) == 0)
 			res = res / i;
 		else
 			i++;
 	}
-		printf("%d\n",i);
+		printf("%d\n", i);
 	return (0);
 }
