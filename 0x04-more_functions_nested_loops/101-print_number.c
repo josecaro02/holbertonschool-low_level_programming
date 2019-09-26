@@ -9,24 +9,23 @@
 void print_number(int n)
 {
 	unsigned int digito, res_digito;
-	unsigned int nro, i;
+	unsigned int i;
 
 	if (n < 0)
 	{
 		n = n * (-1);
 		_putchar('-');
 	}
-	nro = n;
-	res_digito = nro;
+	res_digito = n;
 	digito = 1;
-	do{
+	do {
 		digito = digito * 10;
-		res_digito = nro / digito;
+		res_digito = n / digito;
 	} while (res_digito != 0);
 	digito = digito / 10;
 	for (i = digito; i >= 1; i = i / 10)
 	{
-		_putchar(nro / i + '0');
-		nro = nro % i;
+		_putchar(n / i + '0');
+		n = n % i;
 	}
 }
