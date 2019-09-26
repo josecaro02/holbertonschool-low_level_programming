@@ -19,20 +19,14 @@ void print_number(int n)
 	nro = n;
 	res_digito = nro;
 	digito = 1;
-	while (res_digito != 0)
-	{
+	do{
 		digito = digito * 10;
 		res_digito = nro / digito;
-	}
+	} while (res_digito != 0);
 	digito = digito / 10;
-	if (nro == 0)
-		_putchar('0');
-	else
+	for (i = digito; i >= 1; i = i / 10)
 	{
-		for (i = digito; i >= 1; i = i / 10)
-		{
-			_putchar(nro / i + '0');
-			nro = nro % i;
-		}
+		_putchar(nro / i + '0');
+		nro = nro % i;
 	}
 }
