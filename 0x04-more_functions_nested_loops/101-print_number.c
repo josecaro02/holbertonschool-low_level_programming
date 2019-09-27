@@ -15,14 +15,15 @@ void print_number(int n)
 	nro = n;
 	res_digito = nro;
 	digito = 1;
-	do {
+	while (res_digito >= 10)
+	{
 		digito = digito * 10;
-		res_digito = n / digito;
-	} while (res_digito != 0);
-	digito = digito / 10;
+		res_digito = nro / digito;
+	}
+	nro = n;
 	for (i = digito; i >= 1; i = i / 10)
 	{
-		_putchar(n / i + '0');
-		n = n % i;
+		_putchar(nro / i + '0');
+		nro = nro % i;
 	}
 }
