@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
  *_strcpy - copies the string pointed to by src, including the terminating null
@@ -10,5 +11,19 @@
  */
 char *_strcpy(char *dest, char *src)
 {
-	return (strcpy(dest, src));
+	int i, len;
+	char *base;
+
+	base = src;
+	while (*base != '\0')
+	{
+		base++;
+		len++;
+	}
+	for (i = 0; i <= len; i++)
+	{
+		dest[i] = *src;
+		src++;
+	}
+	return (dest);
 }
