@@ -9,15 +9,17 @@
 void puts_half(char *str)
 {
 	int len, i, n, last_n;
-	char letter;
+	char letter, *base;
 
-	while (*str != '\0')
+	len = 0;
+	base = str;
+	while (*base != '\0')
 	{
-		str++;
+		base++;
 		len++;
 	}
 
-	if (len % 2) == 0)
+	if ((len % 2) == 0)
 		n  = len / 2;
 	else
 		n = (len - 1) / 2;
