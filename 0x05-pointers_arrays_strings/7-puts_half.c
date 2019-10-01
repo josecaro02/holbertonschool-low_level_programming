@@ -11,11 +11,16 @@ void puts_half(char *str)
 	int len, i, n, last_n;
 	char letter;
 
-	if ((strlen(str) % 2) == 0)
-		n  = strlen(str) / 2;
+	while (*str != '\0')
+	{
+		str++;
+		len++;
+	}
+
+	if (len % 2) == 0)
+		n  = len / 2;
 	else
-		n = (strlen(str) - 1) / 2;
-	len  = strlen(str);
+		n = (len - 1) / 2;
 	last_n = len - n;
 	for (i = 0; i < len; i++)
 	{
