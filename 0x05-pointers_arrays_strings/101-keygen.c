@@ -37,6 +37,5 @@ int main(void)
 		else
 			checker = 2772;
 	}
-	printf("password: %d",checker);
 	return (0);
 }
