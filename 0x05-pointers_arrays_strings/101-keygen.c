@@ -14,28 +14,21 @@ int main(void)
 
 	checker = 2772;
 	value = 0;
-	srand(time(NULL));
+	srand(time(0));
 	while (checker != 0)
 	{
-		if (checker >= 65 && checker <= 90)
+
+		value = rand()%(125) + 1;
+		if(checker - value == 0)
 		{
-			value = rand()%(90-65)+65;
+			printf("%c", value);
 			checker = checker - value;
-			if(checker > 0 || checker < 0)
-				checker = checker + value;
-			else
-			{
-				printf("%c", value);
-			}
 		}
-		else if (checker > 0)
+		else if (checker - value > 0)
 		{
-			value = rand()%(90-65)+65;
-			checker = checker - value;
+			checker = checker-value;
 			printf("%c", value);
 		}
-		else
-			checker = 2772;
 	}
 	return (0);
 }
