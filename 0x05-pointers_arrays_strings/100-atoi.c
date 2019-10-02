@@ -9,7 +9,7 @@
 int _atoi(char *s)
 {
 	unsigned int dig_n;
-	int sign, var_dig, var_salida, result;
+	int sign, var_dig, var_salida;
 	char cara;
 
 	dig_n = 0;
