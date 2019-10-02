@@ -15,7 +15,7 @@ int main(void)
 	checker = 2772;
 	value = 0;
 	srand(time(NULL));
-	while (checker > 0)
+	while (checker != 0)
 	{
 		if (checker >= 65 && checker <= 90)
 		{
@@ -28,12 +28,15 @@ int main(void)
 				printf("%c", value);
 			}
 		}
-		else
+		else if (checker > 0)
 		{
 			value = rand()%(90-65)+65;
 			checker = checker - value;
 			printf("%c", value);
 		}
+		else
+			checker = 2772;
 	}
+	printf("password: %d",checker);
 	return (0);
 }
