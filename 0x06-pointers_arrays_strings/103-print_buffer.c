@@ -13,7 +13,7 @@ void print_buffer(char *b, int size)
 	int i, j, salto10, res;
 
 	salto10 = 1;
-	res = 10 - (size % 10);
+	res = !(size % 10) ? 0 : 10 - (size % 10);
 	for (i = 0; i < size + res; i++)
 	{
 		if (salto10 % 10 == 1)
