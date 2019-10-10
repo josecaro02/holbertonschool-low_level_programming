@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
-prime_n - iterate numbers
+ *prime_n - iterate numbers
  *@x: base number
  *@y: iterate number
  *
@@ -10,7 +10,7 @@ prime_n - iterate numbers
 int prime_n(int x, int y)
 {
 	if (x % y != 0 && y < x)
-		return (prime_n (x, y + 1));
+		return (prime_n(x, y + 1));
 	else if (((x % y) == 0) && (y < x))
 		return (0);
 	else
@@ -24,7 +24,7 @@ int prime_n(int x, int y)
  */
 int is_prime_number(int n)
 {
-	if(n <= 1)
+	if (n <= 1)
 		return (0);
 	else
 		return (prime_n(n, 2));
