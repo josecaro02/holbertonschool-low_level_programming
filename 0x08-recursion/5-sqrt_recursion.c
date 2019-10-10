@@ -9,12 +9,12 @@
  */
 int sqrt_h(int x, int y)
 {
-	if (y == 0)
-		return (-1);
-	else if ((x / y) == y && (x % y == 0))
+	if (y * y == x)
 		return (y);
+	else if (y * y > x)
+		return (-1);
 	else
-		return (sqrt_h(x, (y - 1)));
+		return (sqrt_h(x, (y + 1)));
 }
 /**
  *_sqrt_recursion - returns square root of any number
@@ -24,13 +24,10 @@ int sqrt_h(int x, int y)
  */
 int _sqrt_recursion(int n)
 {
-	int m;
-
-	m = n;
-	if (n == 1)
+	if (n == 1 || n == 0)
 		return (n);
 	else if (n < 0)
 		return (-1);
 	else
-		return (sqrt_h(n, m));
+		return (sqrt_h(n, 0));
 }
