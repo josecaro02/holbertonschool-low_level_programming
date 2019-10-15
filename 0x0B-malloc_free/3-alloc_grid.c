@@ -6,7 +6,7 @@
  *@width: quantity of columns
  *@height: quantity of rows
  *
- *Return : matrix full of zeros
+ *Return: matrix full of zeros
  */
 int **alloc_grid(int width, int height)
 {
