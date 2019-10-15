@@ -29,7 +29,7 @@ char *argstostr(int ac, char **av)
 		sum = sum + size_str;
 		size_str = 0;
 	}
-	sum = sum + ac;
+	sum = sum + ac - 1;
 	str = malloc(sum * sizeof(char));
 	if (str == NULL)
 		return (NULL);
@@ -43,6 +43,5 @@ char *argstostr(int ac, char **av)
 		str[cnt] = '\n';
 		cnt++;
 	}
-	str[cnt] = '\0';
 	return (str);
 }
