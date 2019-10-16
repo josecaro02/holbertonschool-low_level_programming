@@ -39,6 +39,8 @@ char **strtow(char *str)
 	int i, j, k, pos_word, words, c_letter;
 	char **palabra;
 
+	if (str == NULL || str == '\0')
+		return (NULL);
 	words = c_letter = pos_word = 0;
 	words = q_words(str);
 	palabra = malloc((words + 1) * sizeof(char *));
@@ -63,6 +65,7 @@ char **strtow(char *str)
 				k++;
 				j++;
 			}
+			palabra[pos_word][k] = '\0';
 			i = j;
 			pos_word++;
 			c_letter = 0;
