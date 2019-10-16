@@ -59,7 +59,7 @@ char **strtow(char *str)
 	int i, j, k, pos_word, words, c_letter;
 	char **palabra;
 
-	if (str == NULL || (strcmp(str,"") == 0))
+	if (str == NULL || (strcmp(str, "") == 0))
 		return (NULL);
 	words = c_letter = pos_word = 0;
 	words = q_words(str);
