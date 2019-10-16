@@ -51,22 +51,22 @@ char **strtow(char *str)
 		else
 		{
 			j = i;
-			while (str[j] != ' ')
+			while (str[j] != ' ' && str[j] != '\0')
 			{
 				c_letter++;
 				j++;
 			}
-			palabra[pos_word] = malloc(c_letter * sizeof(char));
+			palabra[pos_word] = malloc((c_letter + 1) * sizeof(char));
 			j = i;
 			k = 0;
-			while (str[j] != ' ')
+			while (str[j] != ' ' && str[j] != '\0')
 			{
 				palabra[pos_word][k] = str[j];
 				k++;
 				j++;
 			}
-			palabra[pos_word][k] = '\0';
-			i = j;
+			palabra[pos_word][c_letter] = '\0';
+			i = j - 1;
 			pos_word++;
 			c_letter = 0;
 		}
