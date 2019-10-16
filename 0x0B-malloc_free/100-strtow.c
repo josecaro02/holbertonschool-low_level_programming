@@ -2,6 +2,26 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
+ *_strcmp - compare two strings
+ *@s1: first string
+ *@s2: string to compare
+ *
+ *Return: 0 if strings are the same, otherwise strings are different
+ */
+int _strcmp(char *s1, char *s2)
+{
+	int compare, i;
+
+	for (i = 0; s2[i] != '\0'; i++)
+	{
+		compare = s1[i] - s2[i];
+		if (compare != 0)
+			break;
+	}
+	return (compare);
+}
+
+/**
  *q_words - calc the quantity of words
  *@str: string to calculate
  *
@@ -39,7 +59,7 @@ char **strtow(char *str)
 	int i, j, k, pos_word, words, c_letter;
 	char **palabra;
 
-	if (str == NULL || str == '\0')
+	if (str == NULL || (strcmp(str,"") == 0))
 		return (NULL);
 	words = c_letter = pos_word = 0;
 	words = q_words(str);
