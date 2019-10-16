@@ -63,6 +63,8 @@ char **strtow(char *str)
 		return (NULL);
 	words = c_letter = pos_word = 0;
 	words = q_words(str);
+	if (words == 0)
+		return (NULL);
 	palabra = malloc((words + 1) * sizeof(char *));
 	for (i = 0; str[i] != '\0'; i++)
 	{
