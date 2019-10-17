@@ -34,7 +34,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (concat == NULL)
 		return (NULL);
 	j = k = 0;
-	for (i = 0; i < (sz1 + n + 1); i++)
+	for (i = 0; i < (sz1 + n); i++)
 	{
 		if (i < sz1)
 		{
@@ -47,7 +47,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			k++;
 		}
 	}
-	concat[i] = '\0';
 	return (concat);
 
 }
