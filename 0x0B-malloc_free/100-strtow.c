@@ -9,10 +9,10 @@
  */
 int q_words(char *str)
 {
-	int i, space, words;
+	int i, space, word;
 
 	space = 0;
-	words = 0;
+	word = 0;
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] == ' ')
@@ -22,11 +22,11 @@ int q_words(char *str)
 		}
 		else if (space == 0)
 		{
-			words++;
+			word++;
 			space = 1;
 		}
 	}
-	return (words);
+	return (word);
 }
 /**
  *strtow - converts an string into a array oy strings
@@ -34,21 +34,21 @@ int q_words(char *str)
  *
  *Return: array of strings
  */
+char *pal[2];
 char **strtow(char *str)
 {
 	int i, j, k, pos_word, words, c_letter;
 	char **palabra;
 
-	if (str == NULL || str == '\0')
-		return (NULL);
-	words = c_letter = pos_word = 0;
+	pal[0]="hola";
+	pal[1]="jose";
+	c_letter = pos_word = words = k = 0;
 	words = q_words(str);
+	printf("num palabras: %d\n",words);
 	palabra = malloc((words + 1) * sizeof(char *));
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (str[i] == ' ')
-			continue;
-		else
+		if (str[i] != ' ')
 		{
 			j = i;
 			while (str[j] != ' ')
@@ -58,7 +58,6 @@ char **strtow(char *str)
 			}
 			palabra[pos_word] = malloc(c_letter * sizeof(char));
 			j = i;
-			k = 0;
 			while (str[j] != ' ')
 			{
 				palabra[pos_word][k] = str[j];
@@ -66,11 +65,12 @@ char **strtow(char *str)
 				j++;
 			}
 			palabra[pos_word][k] = '\0';
-			i = j;
+			i = j - 1;
+			k = 0;
 			pos_word++;
 			c_letter = 0;
 		}
 	}
 	palabra[words] = NULL;
-	return (palabra);
+	return (pal);
 }
