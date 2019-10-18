@@ -11,6 +11,7 @@ int _strcmp(char *s1, char *s2);
 char *_memcpy(char *dest,  char *src, unsigned int n);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char *_strcpy(char *dest, char *src);
+int zeros(char *str);
 
 /**
  *main - multiplies two numbers
@@ -32,14 +33,36 @@ int main(int argc, char *argv[])
 		_puts_recursion("Error");
 		exit(98);
 	}
+	else if ( zeros(argv[1]) == 0 || zeros(argv[2]) == 0)
+		_puts_recursion("0");
 	else
 	{
 		sz_mul = size_str(argv[1]);
 		sz2 = size_str(argv[2]);
 		mul = malloc((sz_mul + 1) * sizeof(char));
+		if (mul == NULL)
+		{
+			_puts_recursion("Error");
+			exit(98);
+		}
 		mul_2 = malloc((sz_mul + 1) * sizeof(char));
+		if (mul_2 == NULL)
+		{
+			_puts_recursion("Error");
+			exit(98);
+		}
 		add = malloc((sz2 + 1) * sizeof(char));
+		if (add == NULL)
+		{
+			_puts_recursion("Error");
+			exit(98);
+		}
 		add_2 = malloc((sz2 + 1) * sizeof(char));
+		if (add_2 == NULL)
+		{
+			_puts_recursion("Error");
+			exit(98);
+		}
 		add[0] = '1';
 		n_sz = sz_mul;
 		_strcpy(mul_2, argv[1]);
@@ -50,7 +73,17 @@ int main(int argc, char *argv[])
 				n_sz = n_sz + 1;
 				sz_mul = size_str(mul);
 				mul = _realloc(mul, sz_mul, n_sz);
+				if (mul == NULL)
+				{
+					_puts_recursion("Error");
+					exit(98);
+				}
 				mul_2 = _realloc(mul_2, sz_mul, n_sz);
+				if (mul_2 == NULL)
+				{
+					_puts_recursion("Error");
+					exit(98);
+				}
 			}
 			mul = infinite_add(mul_2, argv[1], mul, (sz_mul + 2));
 			_strcpy(mul_2, mul);
@@ -64,7 +97,22 @@ int main(int argc, char *argv[])
 	}
 		return (0);
 }
-
+/**
+ *zeros - check if a entry is zero
+ *@str: string given
+ *
+ *Return: 0 if only zeros, 1 if not
+ */
+int zeros(char *str)
+{
+	int i;
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		if (str[i] != '0')
+			return (1);
+	}
+	return (0);
+}
 /**
  *_strcpy - copies the string pointed to by src, including the terminating null
  * byte (\0), to the buffer pointed to by dest.
