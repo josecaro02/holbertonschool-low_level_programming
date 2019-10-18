@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 		_puts_recursion("Error");
 		exit(98);
 	}
-	else if ( zeros(argv[1]) == 0 || zeros(argv[2]) == 0)
+	else if (zeros(argv[1]) == 0 || zeros(argv[2]) == 0)
 		_puts_recursion("0");
 	else
 	{
@@ -95,7 +95,11 @@ int main(int argc, char *argv[])
 		else
 		_puts_recursion(mul);
 	}
-		return (0);
+	free(mul);
+	free(mul_2);
+	free(add);
+	free(add_2);
+	return (0);
 }
 /**
  *zeros - check if a entry is zero
@@ -106,6 +110,7 @@ int main(int argc, char *argv[])
 int zeros(char *str)
 {
 	int i;
+
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] != '0')
