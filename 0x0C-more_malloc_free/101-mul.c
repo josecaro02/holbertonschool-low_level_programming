@@ -10,6 +10,7 @@ int size_str(char *str);
 int _strcmp(char *s1, char *s2);
 char *_memcpy(char *dest,  char *src, unsigned int n);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+char *_strcpy(char *dest, char *src);
 
 /**
  *main - multiplies two numbers
@@ -20,10 +21,11 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
  */
 int main(int argc, char *argv[])
 {
-	char *mul;
+	char *mul, *mul_2;
 	char *add;
-	int sz_mul, sz2, i;
+	char *add_2;
 	char uno[] = "1";
+	int sz_mul, sz2, n_sz;
 
 	if (argc != 3 || check_char(argv[1]) == 0 || check_char(argv[2]) == 0)
 	{
@@ -34,24 +36,61 @@ int main(int argc, char *argv[])
 	{
 		sz_mul = size_str(argv[1]);
 		sz2 = size_str(argv[2]);
-		printf("size arg1: %d, size2= %d\n",sz_mul, sz2);
 		mul = malloc((sz_mul + 1) * sizeof(char));
+		mul_2 = malloc((sz_mul + 1) * sizeof(char));
 		add = malloc((sz2 + 1) * sizeof(char));
-		for (i = 0; i < sz2; i++)
+		add_2 = malloc((sz2 + 1) * sizeof(char));
+		add[0] = '1';
+		n_sz = sz_mul;
+		_strcpy(mul_2, argv[1]);
+		while (_strcmp(add, argv[2]) != 0)
 		{
-			if(i < (sz2 - 1))
-				add[i] = '0';
-			else
-				add[i] = '1';
+			if (size_str(mul) >= n_sz)
+			{
+				n_sz = n_sz + 1;
+				sz_mul = size_str(mul);
+				mul = _realloc(mul, sz_mul, n_sz);
+				mul_2 = _realloc(mul_2, sz_mul, n_sz);
+			}
+			mul = infinite_add(mul_2, argv[1], mul, (sz_mul + 2));
+			_strcpy(mul_2, mul);
+			_strcpy(add_2, add);
+			add = infinite_add(add_2, uno, add, sz2 + 2);
 		}
-		add[sz2] = '\0';
-		printf("add = %s\n",add);
-		printf("mul= %s\n", mul);
-		mul = infinite_add(argv[1], uno, mul, 2);
-		printf("result: %s\n", mul);
-		_puts_recursion("funciona");
+		if (*argv[2] == '1')
+			_puts_recursion(argv[1]);
+		else
+		_puts_recursion(mul);
 	}
 		return (0);
+}
+
+/**
+ *_strcpy - copies the string pointed to by src, including the terminating null
+ * byte (\0), to the buffer pointed to by dest.
+ *@dest: char where the string will be copied
+ *@src: char with the content to be copied
+ *
+ *Return: char with the addition of two strings
+ */
+char *_strcpy(char *dest, char *src)
+{
+	int i, len;
+	char *base;
+
+	base = src;
+	len = 0;
+	while (*base != '\0')
+	{
+		base++;
+		len++;
+	}
+	for (i = 0; i <= len; i++)
+	{
+		dest[i] = *src;
+		src++;
+	}
+	return (dest);
 }
 
 /**
@@ -196,7 +235,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	if (acum == 1)
 		r[pos_r] = 1 + '0';
 	rev_string(r);
-	if (pos_r + 1 >= size_r)
+	if ((pos_r + 1) >= size_r)
 		return (0);
 	else
 		return (r);
