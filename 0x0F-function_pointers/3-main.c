@@ -28,11 +28,6 @@ int main(int argc, char *argv[])
 		exit(100);
 	}
 	op = get_op_func(argv[2]);
-	if (op == NULL)
-	{
-		printf("Error\n");
-		exit(99);
-	}
 	res = op(num1, num2);
 	printf("%d\n", res);
 	return (0);
