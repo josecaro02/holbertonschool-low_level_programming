@@ -32,7 +32,10 @@ void print_i(va_list a)
  */
 void print_s(va_list a)
 {
-	printf("%s", va_arg(a, char *));
+	char *text;
+
+	text  = va_arg(a, char *);
+	printf(text == NULL ? "%p" : "%s", text);
 }
 
 /**
