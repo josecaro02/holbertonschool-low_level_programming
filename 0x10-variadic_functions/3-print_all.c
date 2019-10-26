@@ -67,8 +67,9 @@ void print_all(const char * const format, ...)
 		{102, print_f},
 		{0, NULL}
 	};
-	i = 0;
+
 	va_start(valist, format);
+	i = 0;
 	while (format[i] != '\0' && format)
 	{
 		k = 0;
