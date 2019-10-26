@@ -36,7 +36,7 @@ void print_s(va_list a)
 	char *text;
 
 	text  = va_arg(a, char *);
-	printf(text == NULL ? "%p" : "%s", text);
+	printf(text == NULL ? "(nil)" : "%s", text);
 }
 
 /**
@@ -75,7 +75,7 @@ void print_all(const char * const format, ...)
 		k = 0;
 		while (ops[k].op != '\0')
 		{
-			if (*ops[k].op == format[i])
+			if (*(ops[k].op) == format[i])
 			{
 				ops[k].f(valist);
 				if (format[i + 1] != '\0')
