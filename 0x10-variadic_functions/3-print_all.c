@@ -2,26 +2,50 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-typedef struct op{
-	int op;
-	void (*f)(va_list);
-}op_t;
+/**
+ *print_c - function that prints a char
+ *@a: valist with the entry arguments
+ *
+ *Return: nothing, it's a void
+ */
 void print_c(va_list a)
 {
-	printf("%c",va_arg(a, int));
+	printf("%c", va_arg(a, int));
 }
+
+/**
+ *print_i - function that prints a char
+ *@a: valist with the entry arguments
+ *
+ *Return: nothing, it's a void
+ */
 void print_i(va_list a)
 {
-	printf("%d",va_arg(a, int));
+	printf("%d", va_arg(a, int));
 }
+
+/**
+ *print_s - function that prints a char
+ *@a: valist with the entry arguments
+ *
+ *Return: nothing, it's a void
+ */
 void print_s(va_list a)
 {
-	printf("%s",va_arg(a, char *));
+	printf("%s", va_arg(a, char *));
 }
+
+/**
+ *print_f - function that prints a char
+ *@a: valist with the entry arguments
+ *
+ *Return: nothing, it's a void
+ */
 void print_f(va_list a)
 {
-	printf("%f",va_arg(a, double));
+	printf("%f", va_arg(a, double));
 }
+
 /**
  *print_all - print all the input arguments
  *@format: format of the input arguments
@@ -40,15 +64,15 @@ void print_all(const char * const format, ...)
 	};
 	i = 0;
 		va_start(valist, format);
-	while (format[i] != '\0')
+	while (format[i] != '\0' && format)
 	{
 		k = 0;
-		while(ops[k].op != '\0')
+		while (ops[k].op != '\0')
 		{
 			if (ops[k].op == format[i])
 			{
 				ops[k].f(valist);
-				if(format[i + 1] != '\0')
+				if (format[i + 1] != '\0')
 					printf(", ");
 			}
 			k++;
