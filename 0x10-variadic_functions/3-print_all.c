@@ -70,7 +70,7 @@ void print_all(const char * const format, ...)
 
 	va_start(valist, format);
 	i = 0;
-	while (format[i] != '\0' && format)
+	while (format && format[i])
 	{
 		k = 0;
 		while (ops[k].op != '\0')
@@ -85,6 +85,6 @@ void print_all(const char * const format, ...)
 		}
 		i++;
 	}
-	va_end(valist);
 	printf("\n");
+	va_end(valist);
 }
