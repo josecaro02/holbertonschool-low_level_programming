@@ -61,11 +61,11 @@ void print_all(const char * const format, ...)
 	va_list valist;
 	int i, k;
 	op_t ops[] = {
-		{99, print_c},
-		{105, print_i},
-		{115, print_s},
-		{102, print_f},
-		{0, NULL}
+		{"c", print_c},
+		{"i", print_i},
+		{"s", print_s},
+		{"f", print_f},
+		{NULL, NULL}
 	};
 
 	va_start(valist, format);
@@ -75,7 +75,7 @@ void print_all(const char * const format, ...)
 		k = 0;
 		while (ops[k].op != '\0')
 		{
-			if (ops[k].op == format[i])
+			if (*ops[k].op == format[i])
 			{
 				ops[k].f(valist);
 				if (format[i + 1] != '\0')
