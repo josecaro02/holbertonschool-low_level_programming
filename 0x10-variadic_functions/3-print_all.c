@@ -63,10 +63,11 @@ void print_all(const char * const format, ...)
 		{99, print_c},
 		{105, print_i},
 		{115, print_s},
-		{102, print_f}
+		{102, print_f},
+		{0, NULL}
 	};
 	i = 0;
-		va_start(valist, format);
+	va_start(valist, format);
 	while (format[i] != '\0' && format)
 	{
 		k = 0;
@@ -82,6 +83,6 @@ void print_all(const char * const format, ...)
 		}
 		i++;
 	}
-	printf("\n");
 	va_end(valist);
+	printf("\n");
 }
