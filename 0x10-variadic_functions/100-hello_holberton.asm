@@ -1,20 +1,16 @@
-	;;  Define variables in the data section
-	SECTION .DATA
-hello:	     db 'Hello, Holberton',10
-helloLen:	  equ $-hello
+section .rodata
+msg:	    db 'Hello, Holberton', 10
+msglen:	 equ $-msg
 
-	;;  Code goes in the text section
-	SECTION .TEXT
-	GLOBAL _start
-
-_start:
-	mov eax,4            	; 'write' system call = 4
-	mov ebx,1            	; file descriptor 1 = STDOUT
-	mov ecx,hello        	; string to write
-	mov edx,helloLen     	; length of string to write
-	int 80h              	; call the kernel
-
-	;;  Terminate program
-	mov eax,1            	; 'exit' system call
-	mov ebx,0            	; exit with error code 0
-	int 80h              	; call the kernel
+	section .text
+	        global main
+main:
+	;;  write(1, msg, msglen)
+	        mov rdi, 1
+	        mov rsi, msg
+	        mov rdx, msglen
+	        mov rax, 1
+	        syscall
+	;;  return 0
+	        mov rax, 0
+	        ret
