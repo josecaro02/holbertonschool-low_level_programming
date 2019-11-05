@@ -14,7 +14,6 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 	n = 0;
 	while (n != index)
 	{
-		printf("no existe");
 		head = head->next;
 		if (head == NULL)
 		{
