@@ -2,7 +2,7 @@
 
 /**
  *reverse_listint - reverse a linked list
- *head: head of the linked list
+ *@head: head of the linked list
  *
  *Return: new head of the linked list
  */
