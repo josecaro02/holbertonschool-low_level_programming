@@ -9,25 +9,28 @@
 size_t free_listint_safe(listint_t **h)
 {
 	size_t n;
-	int *add_a, *add_b;
+	long int add_a, add_b;
 	listint_t *save;
 
-	save = malloc(sizeof(listint_t));
 	n = 0;
+
+	if (h == NULL)
+		return (n);
 	if (*h == NULL)
-		exit(98);
+	{
+		return (n);
+	}
 	while (*h != NULL)
 	{
-		add_a = (int *)&(*h);
-		add_b = (int *)&(*h)->next;
-		if (add_a[0] - add_b[0] <= 0)
+		save = (*h)->next;
+		add_a = (long int)(*h);
+		add_b = (long int)(*h)->next;
+		free(*h);
+		if (add_a - add_b <= 0)
 		{
-			(*h) = NULL;
 			n++;
 			return (n);
 		}
-		save = (*h)->next;
-		free(*h);
 		*h = save;
 		n++;
 	}
