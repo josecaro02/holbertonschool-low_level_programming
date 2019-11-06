@@ -19,12 +19,12 @@ size_t print_listint_safe(const listint_t *head)
 		printf("[%p] %d\n", (void *)head, head->n);
 		add_a = (int *)&head;
 		add_b = (int *)&head->next;
-		if (add_a[0] - add_b[0] < 0)
+		if (add_a[0] - add_b[0] <= 0)
 		{
 			head = head->next;
 			n++;
 			printf("-> [%p] %d\n", (void *)head, head->n);
-			exit (98);
+			return (n);
 		}
 		head = head->next;
 		n++;
