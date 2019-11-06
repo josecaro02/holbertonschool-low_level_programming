@@ -28,6 +28,7 @@ size_t print_listint_safe(const listint_t *head)
 		}
 		if(head->next == NULL)
 		{
+			n++;
 			break;
 		}
 		head = head->next;
