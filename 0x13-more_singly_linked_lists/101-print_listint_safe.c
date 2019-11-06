@@ -14,7 +14,7 @@ size_t print_listint_safe(const listint_t *head)
 	n = 0;
 	if (head == NULL)
 		return (n);
-	while (n < 20)
+	while (head != NULL)
 	{
 		printf("[%p] %d\n", (void *)head, head->n);
 		add_a = (int *)&head;
@@ -24,12 +24,12 @@ size_t print_listint_safe(const listint_t *head)
 			head = head->next;
 			n++;
 			printf("-> [%p] %d\n", (void *)head, head->n);
-			break;
+			exit(98);
 		}
-		if(head->next == NULL)
+		if (head->next == NULL)
 		{
 			n++;
-			break;
+			return (n);
 		}
 		head = head->next;
 		n++;
