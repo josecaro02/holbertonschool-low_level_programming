@@ -16,6 +16,8 @@ listint_t *find_listint_loop(listint_t *head)
 	{
 		add_a = (int *)&head;
 		add_b = (int *)&head->next;
+		if (head->next == NULL)
+			return (NULL);
 		if (add_a[0] - add_b[0] <= 0)
 		{
 			return (head->next);
