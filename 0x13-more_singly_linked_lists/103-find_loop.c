@@ -12,6 +12,8 @@ listint_t *find_listint_loop(listint_t *head)
 
 	if (head == NULL)
 		return (NULL);
+	if (head == head->next)
+		return(head);
 	while (head != NULL)
 	{
 		add_a = (int *)&head;
