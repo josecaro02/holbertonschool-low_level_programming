@@ -25,7 +25,7 @@ size_t free_listint_safe(listint_t **h)
 		add_a = (long int)(*h);
 		add_b = (long int)(*h)->next;
 		free(*h);
-		h = NULL;
+		*h = NULL;
 		if (add_a - add_b <= 0)
 		{
 			n++;
