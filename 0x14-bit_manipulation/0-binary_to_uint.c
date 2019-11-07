@@ -2,7 +2,6 @@
 #include <stdio.h>
 
 int check_char(const char *s);
-int _pow_recursion(int x, int y);
 /**
  *binary_to_uint - convert a binary number to decimal number
  *@b: pointer to a string with the binary number
@@ -22,7 +21,7 @@ unsigned int binary_to_uint(const char *b)
 	check = check_char(b);
 	if (check == 1)
 	{
-		for(size = 0; b[size] != '\0'; size++)
+		for (size = 0; b[size] != '\0'; size++)
 		{}
 		size = size - 1;
 		for (i = 0; size != -1; size--, i++)
@@ -49,23 +48,4 @@ int check_char(const char *s)
 		return (0);
 	else
 		return (check_char(s + 1));
-}
-
-/**
- *_pow_recursion - returns result of pow
- *@x: firs number
- *@y: exponent
- *
- *Return: result of pow x to y
- */
-int _pow_recursion(int x, int y)
-{
-	if (y == 1)
-		return (x);
-	else if (y == 0)
-		return (1);
-	else if (y < 0)
-		return (-1);
-	else
-		return (x * _pow_recursion(x, (y - 1)));
 }

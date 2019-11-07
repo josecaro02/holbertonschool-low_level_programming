@@ -20,9 +20,9 @@ void print_binary(unsigned long int n)
 		size = size >> 1;
 		size_bin++;
 	}
-	if(size_bin != 0)
+	if (size_bin != 0)
 		size_bin = size_bin - 1;
-	for(;size_bin != -1; size_bin--)
+	for (; size_bin != -1; size_bin--)
 	{
 		num = ((n >> size_bin) & 1) + '0';
 		_putchar(num);
