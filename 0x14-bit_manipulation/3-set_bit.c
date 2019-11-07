@@ -9,12 +9,6 @@
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	int bit;
-
-	bit = ((*n >> index) & 1);
-	if (bit == 0)
-		*n = *n + (1 << index);
+	*n = *n | (1 << index);
 	return (1);
-
-
 }
