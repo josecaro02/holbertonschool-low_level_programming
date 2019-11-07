@@ -3,7 +3,7 @@
 /**
  *get_endianness - checks if a pc is little or big endian
  *
- *Return - return 0 if big endian or 1 if little
+ *Return: return 0 if big endian or 1 if little
  */
 int get_endianness(void)
 {
