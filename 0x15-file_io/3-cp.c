@@ -15,7 +15,7 @@
 int main(int argc, char *argv[])
 {
 	int fd, fw;
-	char *buf;
+	char buf[1024];
 	ssize_t read_num, write_num, close_num, close_new;
 
 	if (argc != 3)
@@ -29,9 +29,6 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	buf = malloc(sizeof(char) * 1024);
-	if (buf == NULL)
-		exit(0);
 	fw = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fw == -1)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
