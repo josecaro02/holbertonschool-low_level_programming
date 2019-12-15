@@ -1,5 +1,4 @@
 #include "lists.h"
-
 /**
  *delete_dnodeint_at_index - delete a node at the given index
  *@head: head of the double linked list
@@ -13,7 +12,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	unsigned int pos;
 
 	pos = 0;
-	if (*head == NULL)
+	if (*head == NULL || head == NULL)
 		return (-1);
 	actual = *head;
 	if (index == 0 && actual->next != NULL)
