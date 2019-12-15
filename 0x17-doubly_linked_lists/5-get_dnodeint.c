@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- *get_dnodeint_ad_index - get a node to the double linked list at the given idx
+ *get_dnodeint_at_index - get a node to the double linked list at the given idx
  *@head: head of the double linked list
  *@index: index to the new node
  *
@@ -13,11 +13,11 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 
 	if (head == NULL)
 		return (NULL);
-	for(i = 0; i != index; i++)
+	for (i = 0; i != index; i++)
 	{
 		head = head->next;
-		if(head == NULL)
-			return(NULL);
+		if (head == NULL)
+			return (NULL);
 	}
-	return(head);
+	return (head);
 }

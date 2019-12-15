@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- *free_dlisstint - free the memory allocated by the double linked list
+ *free_dlistint - free the memory allocated by the double linked list
  *@head: head of the double linked list
  *
  *Return: nothing it's a void
@@ -13,7 +13,7 @@ void free_dlistint(dlistint_t *head)
 	if (head == NULL)
 		return;
 	actual = head;
-	while(actual != NULL)
+	while (actual != NULL)
 	{
 		actual = actual->next;
 		free(head);
