@@ -15,7 +15,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 
 	if (ht == NULL)
 		return (NULL);
-	if (key == NULL | strcmp(key, "") == 0)
+	if (strcmp(key, "") == 0)
 		return (NULL);
 	key_cpy = strdup(key);
 	size_hs_tbl = ht->size;
