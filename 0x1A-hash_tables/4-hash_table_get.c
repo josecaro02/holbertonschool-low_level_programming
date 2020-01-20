@@ -15,7 +15,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 
 	if (ht == NULL)
 		return (NULL);
-	if (strcmp(key, "") == 0)
+	if (key == NULL | strcmp(key, "") == 0)
 		return (NULL);
 	key_cpy = strdup(key);
 	size_hs_tbl = ht->size;
@@ -25,7 +25,6 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	{
 		while (cpy_nd != NULL)
 		{
-			printf("key: %s\n", cpy_nd->key);
 			if (strcmp(cpy_nd->key, key_cpy) == 0)
 				return (cpy_nd->value);
 			cpy_nd = cpy_nd->next;
