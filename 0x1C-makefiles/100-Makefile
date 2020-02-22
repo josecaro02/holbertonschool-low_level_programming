@@ -3,8 +3,8 @@ SRC = main.c holberton.c
 OBJ = $(SRC:%.c=%.o)
 NAME = holberton
 CFLAGS = -Wall -Werror -Wextra -pedantic
-all: $(OBJ)
-	${CC} ${CFLAGS} ${SRC} -o ${NAME}
+all: m.h $(OBJ)
+	${CC} ${SRC} -o ${NAME}
 
 re: oclean all
 
