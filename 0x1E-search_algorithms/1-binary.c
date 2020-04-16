@@ -12,9 +12,9 @@ int binary_search(int *array, size_t size, int value)
 {
 	size_t left, right, index, i;
 
-	left = 0;
+	left = index = 0;
 	right = size - 1;
-	if (array == NULL)
+	if (array == NULL || value < 0)
 		return (-1);
 	while (left <= right)
 	{
